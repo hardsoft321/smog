@@ -1,0 +1,11 @@
+{
+    "autoload": {
+        "psr-4": {
+            "smog\\": "src/"
+        }
+    },
+    "require": {
+        "ulrichsg/getopt-php": "^3.2",
+        "zendframework/zend-code": "^3.1"
+    }
+}
