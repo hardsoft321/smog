@@ -23,6 +23,7 @@ smog view.detail
 smog view.edit
 smog controller
 smog m2m --left Documents --right VipAccounts
+smog touch -f 1.php
 
 ```
 
@@ -113,6 +114,9 @@ smog m2m --left Documents --right VipAccounts
 >
 > New file created: custom/Extension/modules/VipAccounts/Ext/Layoutdefs/Documents.php
 >
+> modules/VipAccounts$ touch -f 1.php
+>
+> New file created: 1.php
 
 
 Clear this example

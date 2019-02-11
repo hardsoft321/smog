@@ -53,4 +53,18 @@ class FileWriter
         $generator->setIndentation('    ');
         return $generator->generate();
     }
+
+    public static function create($options)
+    {
+        if (empty($options['file'])) {
+            throw new ArgumentException('Undefined file name. Use --file option.');
+        }
+        self::writeFileIfNotExists($options['file'], function() {
+            $copyright = self::getCopyright();
+            return <<<PHP
+<?php
+{$copyright}
+PHP;
+        });
+    }
 }

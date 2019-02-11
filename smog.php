@@ -23,6 +23,12 @@ $getopt = new GetOpt([
 ]);
 
 $getopt->addCommands([
+    Command::create('touch', '\smog\FileWriter::create')
+        ->addOptions([
+            ['f', 'file', GetOpt::REQUIRED_ARGUMENT
+                , 'File name'],
+        ])
+        ->setDescription('Creates file with copyright.'),
     Command::create('bean', '\smog\module\Bean::create')
         ->addOptions([
             ['m', 'module', GetOpt::REQUIRED_ARGUMENT
