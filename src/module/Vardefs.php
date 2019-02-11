@@ -149,6 +149,11 @@ PHP;
             if (!empty($implementsString)) {
                 $contents .= $implementsString;
             }
+            $contents .= <<<PHP
+
+\$dictionary['{$module['object_name']}']['fields']['name']['audited'] = true;
+
+PHP;
             return $contents;
         });
     }
