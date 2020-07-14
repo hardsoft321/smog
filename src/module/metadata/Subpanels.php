@@ -25,6 +25,9 @@ class Subpanels extends Metadata
             include "{$module['path']}/vardefs.php";
             if (!empty($dictionary[$module['object_name']])) {
                 foreach ($dictionary[$module['object_name']]['fields'] as $field) {
+                    if (empty($field['type'])) {
+                        continue;
+                    }
                     if ($field['type'] == 'link' || $field['type'] == 'id') {
                         continue;
                     }

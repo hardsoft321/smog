@@ -34,7 +34,7 @@ class Vardefs extends Bean
                         'audited' => true,
                         'type' => $type,
                     ];
-                    if (array_search('required', $params)) {
+                    if (array_search('required', $params) !== false) {
                         $field['required'] = true;
                     }
                     if ($type == 'varchar' || $type == 'enum' || $type == 'multienum') {
@@ -101,6 +101,10 @@ class Vardefs extends Bean
                             $indices[] = $index;
                             $relationships[$relName] = $rel;
                         }
+                    }
+                    else if ($type == 'date') {
+                        $field['enable_range_search'] = true;
+                        $field['options'] = 'date_range_search_dom';
                     }
                     else if ($type == 'currency') {
                         $fields['currency_id'] = [

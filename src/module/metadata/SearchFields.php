@@ -29,6 +29,11 @@ class SearchFields extends Metadata
                         $searchFields['range_' . $field['name']] = ['query_type' => 'default', 'enable_range_search' => true];
                         $searchFields['start_range_' . $field['name']] = ['query_type' => 'default', 'enable_range_search' => true];
                         $searchFields['end_range_' . $field['name']] = ['query_type' => 'default', 'enable_range_search' => true];
+                        if ($field['type'] === 'date' || $field['type'] === 'datetime') {
+                            $searchFields['range_' . $field['name']]['is_date_field'] = true;
+                            $searchFields['start_range_' . $field['name']]['is_date_field'] = true;
+                            $searchFields['end_range_' . $field['name']]['is_date_field'] = true;
+                        }
                     }
                 }
             }

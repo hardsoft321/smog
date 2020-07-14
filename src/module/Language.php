@@ -30,6 +30,9 @@ class Language extends Bean
                 ];
                 if (!empty($dictionary[$module['object_name']])) {
                     foreach ($dictionary[$module['object_name']]['fields'] as $field) {
+                        if (empty($field['type'])) {
+                            continue;
+                        }
                         if ($field['name'] == 'currency_id') {
                             continue;
                         }
