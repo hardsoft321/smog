@@ -37,6 +37,9 @@ class Vardefs extends Bean
                     if (array_search('required', $params) !== false) {
                         $field['required'] = true;
                     }
+                    if ($type == 'multienum') {
+                        $field['isMultiSelect'] = true;
+                    }
                     if ($type == 'varchar' || $type == 'enum' || $type == 'multienum') {
                         if (!empty($params[0]) && \is_numeric($params[0])) {
                             $field['len'] = $params[0];

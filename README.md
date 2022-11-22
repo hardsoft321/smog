@@ -12,7 +12,7 @@ cd /path/to/SuiteCRM
 
 mkdir modules/VipAccounts
 cd modules/VipAccounts
-smog bean --object VipAccount --table vip_accounts
+smog bean --module VipAccounts --object VipAccount --table vip_accounts
 smog vardefs --fields code:varchar[12,required],num:int,vip_type:enum,status:enum,main_contact_id:id[Contacts],amount:currency,percent:double --implements basic,assignable,security_groups
 smog menu
 smog language
